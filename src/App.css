@@ -2,36 +2,47 @@
   --max-width: 1060px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  background: #c2c2c2;
+}
+
 .container {
   max-width: var(--max-width);
   margin: auto;
 }
 
-.App {
-  text-align: center;
+.menu {
+  height: 56px;
+  background:#dedede;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.menu__logo {
+  height: 32px;
+  width: 39px;
+  background: url('./assets/logo-classic@2x.png');
+  background-size: cover;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.menu__container {
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-title {
-  font-size: 1.5em;
+.cart-btn {
+  width: 56px;
+  height: 56px;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.big-spot__btn {
+  height: 370px;
+  width: 100%;
+  background: url('./assets/game-spot@2x.png');
+  background-size: cover;
 }
