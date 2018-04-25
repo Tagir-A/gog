@@ -1,5 +1,11 @@
 :root {
   --max-width: 1060px;
+  --main-font: 'Source Sans Pro', sans-serif;
+  --semi-bold: 600;
+  --main-line-height: 1.21;
+  --main-font-size: 14px;
+  --emphasis-font-size: 15px;
+  --insignificant-font-size: 13px;
 }
 
 * {
@@ -8,7 +14,9 @@
 
 .app {
   background: #c2c2c2;
-  height: 100vh;
+  min-height: 100vh;
+  font-family: var(--main-font);
+  line-height: var(--main-line-height);
 }
 
 .container {
@@ -46,21 +54,25 @@
 }
 
 .big-spot__btn {
-  height: 370px;
   width: 100%;
-  background: url('./assets/game-spot@2x.png');
-  background-size: cover;
+  padding-bottom: 34.63%;
+  background: url('./assets/game-spot@2x.png') no-repeat center;
+  background-size: contain;
 }
 
 .small-spots {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .small-spot {
+  display: flex;
+  flex-direction: column;
   max-width: 196px;
   max-height: 185px;
   margin-right: 5px;
+  margin-bottom: 20px;
 }
 
 .small-spot:last-child {
@@ -68,6 +80,32 @@
 }
 
 .small-spot__image {
+  display: block;
   max-height: 110px;
   width: 100%;
+}
+
+.small-spot__info {
+  flex: 1 1 auto;
+  background-color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 11px 8px 8px 9px;
+}
+
+.small-spot__info__title {
+  margin: 0;
+  font-weight: var(--semi-bold);
+  font-size: var(--main-font-size);
+}
+
+.small-spot__btns {
+  text-align: right;
+}
+
+.small-spot__btn {
+  font-size: var(--insignificant-font-size);
+  font-weight: var(--semi-bold);
+  color: rgba(64, 64, 64, .75);
 }
