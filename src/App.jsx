@@ -23,7 +23,16 @@ class App extends Component {
         </section>
         <section className="small-spots">
         {smallSpots.map(game => (
-          <div>
+          <div className="small-spot">
+            <img src={game.img} alt={game.title} className="small-spot__image"/>
+            <div className="small-spot__info">
+              <h3 className="small-spot__info__title">{game.title}</h3>
+              <div className="small-spot__btns">
+                <button className="small-spot__btn">
+                { game.price.value / game.price.minorUnits }
+                </button>
+              </div>
+            </div>
           </div>
         ))}
         </section>

@@ -8,6 +8,7 @@
 
 .app {
   background: #c2c2c2;
+  height: 100vh;
 }
 
 .container {
@@ -40,9 +41,33 @@
   height: 56px;
 }
 
+.big-spot {
+  margin-bottom: 20px;
+}
+
 .big-spot__btn {
   height: 370px;
   width: 100%;
   background: url('./assets/game-spot@2x.png');
   background-size: cover;
+}
+
+.small-spots {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-spot {
+  max-width: 196px;
+  max-height: 185px;
+  margin-right: 5px;
+}
+
+.small-spot:last-child {
+  margin-right: 0;
+}
+
+.small-spot__image {
+  max-height: 110px;
+  width: 100%;
 }
