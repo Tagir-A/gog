@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import pluralize from 'pluralize'
 import logo from './assets/logo-classic.svg';
 import cartIco from './assets/ico-cart.svg'
 import './App.css';
 import { smallSpots } from './data/small-spots';
+
+function isInCart(game, {cart:{products}}) {
+  return products.find(product=> product.title == game.title)
+}
 
 class App extends Component {
   state = {
@@ -20,10 +25,10 @@ class App extends Component {
           <div className="menu__container">
             <a className='menu__logo'/>
             <button
-            className="cart-btn"
+            className="btn btn--cart"
             onClick={this.handleCartClick}
             >
-              <img src={cartIco}/>
+              <div className='cart-icon'/>
               {products.length}
             </button>
             { isOpen && this.renderCart() }
@@ -32,26 +37,9 @@ class App extends Component {
         <div className="container">
         <section className="big-spot">
         <h3 className="big-spot__title">GAME OF THE WEEK</h3>
-        <button className="big-spot__btn"></button>
+        <button className="btn big-spot__btn"></button>
         </section>
-        <section className="small-spots">
-        {smallSpots.map(game => (
-          <div className="small-spot">
-            <img src={game.img} alt={game.title} className="small-spot__image"/>
-            <div className="small-spot__info">
-              <h3 className="small-spot__info__title">{game.title}</h3>
-              <div className="small-spot__btns">
-                <button
-                className="small-spot__btn"
-                onClick={(e) => this.handleAddToCart(e,game)}
-                >
-                { game.price.value / game.price.minorUnits }
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-        </section>
+        {this.renderSmallSpots()}
         </div>
       </div>
     );
@@ -59,17 +47,18 @@ class App extends Component {
 
   renderCart() {
     const {cart:{products}} = this.state
+    const l = products.length
     return (
       <div className="cart">
         <div className="cart__info">
         <h4 className="cart__info__quantity">
-          {`${products.length} items in cart`}
+          {`${l} ${pluralize('item',l)} in cart`}
         </h4>
         <h4 className="cart__info__price">
           { products.reduce((totalPrice, item)=> totalPrice+= item.price.value / item.price.minorUnits, 0)}
         </h4>
         <button
-        className="cart__info__btn cart__info__btn--clear"
+        className="btn cart__info__btn cart__info__btn--clear"
         onClick={this.handleClearCart}
         >
           CLEAR CART
@@ -77,10 +66,75 @@ class App extends Component {
         </div>
         <div className="cart__content">
           {products.map(item=> (
-            <h4 className="cart__content__game-title">{item.title}</h4>
+            <div className="cart__product">
+            <img src={item.img} alt={item.title} className="product__img"/>
+            <div className="product__info">
+              <h4 className="product__info__game-title">{item.title}</h4>
+              <button className="product__info__btn">Remove</button>
+            </div>
+            <h6 className="product__price">{item.price.value / item.price.minorUnits}</h6>
+            </div>
           ))}
         </div>
       </div>
+    )
+  }
+
+  renderSmallSpots() {
+    return (
+      <section className="small-spots">
+      { smallSpots.map(game => (
+        <div className="small-spot">
+          <img src={ game.img } alt={ game.title } className="small-spot__image"/>
+          <div className="small-spot__info">
+            <h3 className="small-spot__info__title">{game.title}</h3>
+            <div className="small-spot__btns">
+            {game.discount && (
+              <div className="small-spot__discount">
+                {`-${game.discount}%`}
+              </div>
+            )}
+            { game.owned ? this.renderOwnedBtn() :
+              isInCart(game, this.state) ? this.renderInCartBtn() :
+              this.renderAddBtn(game)}
+            </div>
+          </div>
+        </div>
+      ))}
+      </section>
+    )
+  }
+
+  renderAddBtn(game) {
+    return (
+            <button
+              className="btn small-spot__btn"
+              onClick={(e) => this.handleAddToCart(e,game)}
+            >
+              { game.price.value / game.price.minorUnits }
+            </button>
+    )
+  }
+
+  renderOwnedBtn() {
+    return (
+      <button
+      className="btn small-spot__btn small-spot__btn--disabled"
+      disabled
+      >
+        OWNED
+      </button>
+    )
+  }
+
+  renderInCartBtn(){
+    return (
+      <button
+      className="btn small-spot__btn"
+      disabled
+      >
+        IN CART
+      </button>
     )
   }
 

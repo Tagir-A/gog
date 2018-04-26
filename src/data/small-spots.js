@@ -12,7 +12,8 @@ export const smallSpots = [
             currency: 'USD',
             value: 999,
             minorUnits: 100
-        }
+        },
+        discount: 50
     },
     {
         title: "CHAOS ON DEPONIA",
@@ -21,7 +22,8 @@ export const smallSpots = [
             currency: 'USD',
             value: 999,
             minorUnits: 100
-        }
+        },
+        owned: true
     },
     {
         title: "THE SETTLERS 2: GOLD EDITION",
@@ -39,7 +41,8 @@ export const smallSpots = [
             currency: 'USD',
             value: 499,
             minorUnits: 100
-        }
+        },
+        discount: 50
     },
     {
         title: "ASSASIN'S CREED: DIRECTOR'S CUT",
