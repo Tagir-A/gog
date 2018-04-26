@@ -70,7 +70,12 @@ class App extends Component {
             <img src={item.img} alt={item.title} className="product__img"/>
             <div className="product__info">
               <h4 className="product__info__game-title">{item.title}</h4>
-              <button className="product__info__btn">Remove</button>
+              <button
+                className="product__info__btn"
+                onClick={(e) => this.handleRemoveClick(e,item.title)}
+              >
+                Remove
+              </button>
             </div>
             <h6 className="product__price">{item.price.value / item.price.minorUnits}</h6>
             </div>
@@ -161,6 +166,16 @@ class App extends Component {
     const nextCart = {
       ...this.state.cart,
       products: []
+    }
+    this.setState({cart: nextCart})
+  }
+
+  handleRemoveClick = (e, title) => {
+    const {cart} = this.state
+    const nextProducts = cart.products.filter(item => item.title != title)
+    const nextCart = {
+      ...cart,
+      products: nextProducts
     }
     this.setState({cart: nextCart})
   }
