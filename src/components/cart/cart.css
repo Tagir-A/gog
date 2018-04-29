@@ -1,0 +1,114 @@
+.btn--cart {
+  width: 56px;
+  height: 56px;
+  background-color: var(--cart-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  border: 1px solid var(--border-separation-color);
+  border-top: none;
+  border-bottom: none;
+}
+
+.cart-icon {
+  width: 17px;
+  height: 15px;
+  background: url("../../assets/ico-cart.svg");
+  margin-right: 5px;
+}
+
+.cart {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  width: 371px;
+  min-height: 60px;
+  background-color: var(--cart-color);
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-top: none;
+  box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.cart__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.cart__info__quantity {
+  margin: 0;
+}
+
+.cart__info__price {
+  margin: 0 10px 0 auto;
+}
+
+.cart__info__btn {
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  line-height: var(--hign-line-height);
+  font-weight: var(--semi-bold);
+  border-radius: var(--button-border-radius);
+  border: none;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.3);
+  color: #fff;
+  background-image: linear-gradient(to top, #7a3dc6, #b65ae2);
+  width: 129px;
+  height: 40px;
+}
+
+.cart__product {
+  height: 70px;
+  padding: 5px 10px 5px 6px;
+  border-top: 1px solid var(--border-separation-color);
+  display: flex;
+  align-items: center;
+}
+
+.cart__product:hover .product__info__btn {
+  display: inline-block;
+}
+
+.product__img {
+  width: 100px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.product__info {
+  max-width: 185px;
+}
+
+.product__info__btn {
+  display: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  line-height: var(--low-line-heigth);
+  font-family: var(--main-font);
+  font-size: var(--insignificant-font-size);
+  font-weight: var(--semi-bold);
+  color: var(--price-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.product__info__game-title {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: var(--semi-bold);
+  font-size: var(--main-font-size);
+  color: var(--game-title-color);
+}
+
+.product__price {
+  margin: 0 0 0 auto;
+  color: var(--price-color);
+  opacity: var(--price-opacity);
+  font-size: var(--insignificant-font-size);
+  font-weight: var(--semi-bold);
+}

@@ -1,6 +1,6 @@
 :root {
   --max-width: 1060px;
-  --main-font: 'Source Sans Pro', sans-serif;
+  --main-font: "Source Sans Pro", sans-serif;
   --semi-bold: 600;
   --main-line-height: 1.21;
   --hign-line-height: 1.57;
@@ -11,10 +11,10 @@
   --cart-color: #f7f7f7;
   --discount-color: #00905e;
   --game-title-color: #212121;
-  --price-color: rgba(64, 64, 64, .75);
-  --border-separation-color: rgba(0, 0, 0, .08);
+  --price-color: rgba(64, 64, 64, 0.75);
+  --border-separation-color: rgba(0, 0, 0, 0.08);
   --button-border-radius: 3px;
-  --price-opacity: .75;
+  --price-opacity: 0.75;
 }
 
 * {
@@ -23,6 +23,11 @@
 
 .app {
   background: #c2c2c2;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(108, 54, 173, 0.1),
+    #c2c2c2
+  );
   min-height: 100vh;
   font-family: var(--main-font);
   line-height: var(--main-line-height);
@@ -31,34 +36,6 @@
 .container {
   max-width: var(--max-width);
   margin: auto;
-}
-
-.menu {
-  height: 56px;
-  background:#dedede;
-}
-
-.menu__logo {
-  height: 32px;
-  width: 39px;
-  background: url('./assets/logo-classic@2x.png');
-  background-size: cover;
-}
-
-.menu__container {
-  max-width: var(--max-width);
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.cart-icon {
-  width: 17px;
-  height: 15px;
-  background: url('./assets/ico-cart.svg');
-  margin-right: 5px;
 }
 
 .btn {
@@ -70,36 +47,6 @@
   font-weight: var(--semi-bold);
 }
 
-.btn--cart {
-  width: 56px;
-  height: 56px;
-  background-color: var(--cart-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0;
-  border: 1px solid var(--border-separation-color);
-  border-top: none;
-  border-bottom: none;
-}
-
-.big-spot {
-  margin-bottom: 20px;
-}
-
-.big-spot__btn {
-  width: 100%;
-  padding-bottom: 34.63%;
-  background: url('./assets/game-spot@2x.png') no-repeat center;
-  background-size: contain;
-}
-
-.small-spots {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .small-spot {
   display: flex;
   flex-direction: column;
@@ -107,6 +54,7 @@
   max-height: 185px;
   margin-right: 5px;
   margin-bottom: 20px;
+  box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.15);
 }
 
 .small-spot:last-child {
@@ -153,7 +101,7 @@
 }
 
 .small-spot__btn--disabled {
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .small-spot__discount {
@@ -168,93 +116,4 @@
   font-size: var(--insignificant-font-size);
   font-weight: var(--semi-bold);
   border-radius: var(--button-border-radius);
-}
-
-.cart {
-  position: absolute;
-  top: 56px;
-  right: 0;
-  width: 371px;
-  min-height: 60px;
-  background-color: var(--cart-color);
-  border: solid 1px rgba(0, 0, 0, 0.2);
-  border-top: none;
-  box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.15);
-}
-
-.cart__info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.cart__info__quantity {
-  margin: 0;
-}
-
-.cart__info__price {
-  margin: 0 10px 0 auto;
-}
-
-.cart__info__btn {
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
-  line-height: var(--hign-line-height);
-  font-weight: var(--semi-bold);
-  border-radius: var(--button-border-radius);
-  border: none;
-  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.3);
-  color: #fff;
-  background-image: linear-gradient(to top, #7a3dc6, #b65ae2);
-  width: 129px;
-  height: 40px;
-}
-
-.cart__product {
-  height: 70px;
-  padding: 5px 10px 5px 6px;
-  border-top: 1px solid var(--border-separation-color);
-  display: flex;
-  align-items: center;
-}
-
-.product__img {
-  width: 100px;
-  height: 60px;
-  margin-right: 10px;
-}
-
-.product__info {
-  max-width: 185px;
-}
-
-.product__info__btn {
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  line-height: var(--low-line-heigth);
-  font-family: var(--main-font);
-  font-size: var(--insignificant-font-size);
-  font-weight: var(--semi-bold);
-  color: var(--price-color);
-  text-decoration: underline;
-}
-
-.product__info__game-title {
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight: var(--semi-bold);
-  font-size: var(--main-font-size);
-  color: var(--game-title-color);
-}
-
-.product__price {
-  margin: 0 0 0 auto;
-  color: var(--price-color);
-  opacity: var(--price-opacity);
-  font-size: var(--insignificant-font-size);
-  font-weight: var(--semi-bold);
 }

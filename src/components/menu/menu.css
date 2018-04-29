@@ -1,0 +1,22 @@
+.menu {
+    height: 56px;
+    background:#dedede;
+    background-image: linear-gradient(to bottom, #dedede, #e1e1e1);
+    box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.15);
+  }
+
+.menu__logo {
+    height: 32px;
+    width: 39px;
+    background: url('../../assets/logo-classic@2x.png');
+    background-size: cover;
+}
+
+.menu__container {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
