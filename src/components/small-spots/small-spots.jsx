@@ -5,9 +5,10 @@ import "./small-spots.css";
 
 import { smallSpots } from "../../data/small-spots";
 import { SmallSpot } from "../small-spot/small-spot";
+import { addToCart } from "../../actions/cart";
 
 function isInCart(game, { products }) {
-  return products.find(product => product.title == game.title);
+  return products.find(product => product.title === game.title);
 }
 
 class SmallSpots extends Component {
@@ -15,7 +16,12 @@ class SmallSpots extends Component {
     return (
       <section className="small-spots">
         {smallSpots.map(game => (
-          <SmallSpot game={game} isInCart={isInCart(game, this.props.cart)} />
+          <SmallSpot
+            key={game.title}
+            game={game}
+            isInCart={isInCart(game, this.props.cart)}
+            onAddClick={this.props.addToCart}
+          />
         ))}
       </section>
     );
@@ -29,7 +35,12 @@ function mapState({ cart }) {
 }
 
 function mapDispatch(dispatch) {
-  return bindActionCreators({}, dispatch);
+  return bindActionCreators(
+    {
+      addToCart
+    },
+    dispatch
+  );
 }
 
 export default connect(mapState, mapDispatch)(SmallSpots);

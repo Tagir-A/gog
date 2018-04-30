@@ -30,10 +30,7 @@ class SmallSpot extends Component {
     } = game;
     const priceToShow = value / minorUnits;
     return (
-      <button
-        className="btn small-spot__btn"
-        onClick={e => this.handleAddToCart(e, game)}
-      >
+      <button className="btn small-spot__btn" onClick={this.handleAddToCart}>
         {formatPrice(priceToShow)}
       </button>
     );
@@ -56,6 +53,11 @@ class SmallSpot extends Component {
       </button>
     );
   }
+
+  handleAddToCart = () => {
+    const { onAddClick, game } = this.props;
+    onAddClick && onAddClick(game);
+  };
 }
 
 export { SmallSpot };

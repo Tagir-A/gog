@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import pluralize from "pluralize";
 import { bindActionCreators } from "redux";
 import "./cart.css";
-import { toggleCart, clearCart } from "../../actions/cart";
+import { toggleCart, clearCart, removeFromCart } from "../../actions/cart";
 import { formatPrice } from "../../utils/formatters";
+import { CartProduct } from "./cart-product/cart-product";
 
 class Cart extends Component {
   render() {
@@ -43,22 +44,12 @@ class Cart extends Component {
           </button>
         </div>
         <div className="cart__content">
-          {products.map(item => (
-            <div className="cart__product">
-              <img src={item.img} alt={item.title} className="product__img" />
-              <div className="product__info">
-                <h4 className="product__info__game-title">{item.title}</h4>
-                <button
-                  className="product__info__btn"
-                  onClick={e => this.handleRemoveClick(e, item.title)}
-                >
-                  Remove
-                </button>
-              </div>
-              <h6 className="product__price">
-                {item.price.value / item.price.minorUnits}
-              </h6>
-            </div>
+          {products.map(product => (
+            <CartProduct
+              key={product.title}
+              product={product}
+              onRemoveClick={this.props.removeFromCart}
+            />
           ))}
         </div>
       </div>
@@ -85,7 +76,8 @@ function mapDispatch(dispatch) {
   return bindActionCreators(
     {
       toggleCart,
-      clearCart
+      clearCart,
+      removeFromCart
     },
     dispatch
   );

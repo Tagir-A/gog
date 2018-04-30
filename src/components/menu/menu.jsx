@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./menu.css";
+import logo from "../../assets/logo-classic.svg";
 import Cart from "../cart/cart";
 
 class Menu extends Component {
@@ -7,7 +8,9 @@ class Menu extends Component {
     return (
       <header className="menu">
         <div className="menu__container">
-          <a className="menu__logo" href="https://www.gog.com/" />
+          <a className="menu__logo" href="https://www.gog.com/">
+            <img src={logo} alt="main page link" />
+          </a>
           <Cart />
         </div>
       </header>

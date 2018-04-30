@@ -1,4 +1,9 @@
-import { TOGGLE_CART, CLEAR_CART } from "../actions/types";
+import {
+  TOGGLE_CART,
+  CLEAR_CART,
+  ADD_TO_CART,
+  REMOVE_FROM_CART
+} from "../actions/types";
 
 const defaultState = {
   products: [],
@@ -8,24 +13,42 @@ const defaultState = {
 export default function cart(state = defaultState, action = {}) {
   switch (action.type) {
     case TOGGLE_CART:
-      return handleToggleCart(state, action);
+      return handleToggleCart(state);
     case CLEAR_CART:
-      return handleclearCart(state, action);
+      return handleClearCart(state);
+    case ADD_TO_CART:
+      return handleAddToCart(state, action);
+    case REMOVE_FROM_CART:
+      return handleRemoveFromCart(state, action);
     default:
       return state;
   }
 }
 
-function handleToggleCart(state, action) {
+function handleToggleCart(state) {
   return {
     ...state,
     isOpen: !state.isOpen
   };
 }
 
-function handleclearCart(state, action) {
+function handleClearCart(state) {
   return {
     ...state,
     products: []
+  };
+}
+
+function handleAddToCart(state, { game }) {
+  return {
+    ...state,
+    products: [...state.products, game]
+  };
+}
+
+function handleRemoveFromCart(state, { game }) {
+  return {
+    ...state,
+    products: state.products.filter(item => item.title !== game.title)
   };
 }
