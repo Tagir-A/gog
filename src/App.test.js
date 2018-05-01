@@ -87,6 +87,16 @@ describe("Cart dropdown", () => {
         "display"
       )).jsonValue();
       expect(btnInnerText).toEqual("Remove");
+      await page.hover(".cart__product");
+      try {
+        const btnVisible = await page.waitForSelector(".product__info__btn", {
+          visible: true,
+          timeout: 100
+        });
+        expect(btnVisible).toBeTruthy();
+      } catch (e) {
+        expect(e).toBeFalsy();
+      }
     },
     16000
   );
