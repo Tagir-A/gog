@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders add button when game not owned and not in a cart 1`] = `
+"<div className=\\"small-spot\\">
+  <img src=\\"oddworld.png\\" alt=\\"ODDWORLD: STRANGER\\\\'S WRATH\\" className=\\"small-spot__image\\" />
+  <div className=\\"small-spot__info\\">
+    <h3 className=\\"small-spot__info__title\\">
+      ODDWORLD: STRANGER&#39;S WRATH
+    </h3>
+    <div className=\\"small-spot__btns\\">
+      <div className=\\"small-spot__discount\\">
+        -50%
+      </div>
+      <button className=\\"btn small-spot__btn\\" onClick={[Function]}>
+        $9.99
+      </button>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`renders owned button when game is owned 1`] = `
+"<div className=\\"small-spot\\">
+  <img src=\\"oddworld.png\\" alt=\\"ODDWORLD: STRANGER\\\\'S WRATH\\" className=\\"small-spot__image\\" />
+  <div className=\\"small-spot__info\\">
+    <h3 className=\\"small-spot__info__title\\">
+      ODDWORLD: STRANGER&#39;S WRATH
+    </h3>
+    <div className=\\"small-spot__btns\\">
+      <div className=\\"small-spot__discount\\">
+        -50%
+      </div>
+      <button className=\\"btn small-spot__btn small-spot__btn--disabled\\" disabled={true}>
+        OWNED
+      </button>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`renders without crashing 1`] = `
+"<div className=\\"small-spot\\">
+  <img src=\\"oddworld.png\\" alt=\\"ODDWORLD: STRANGER\\\\'S WRATH\\" className=\\"small-spot__image\\" />
+  <div className=\\"small-spot__info\\">
+    <h3 className=\\"small-spot__info__title\\">
+      ODDWORLD: STRANGER&#39;S WRATH
+    </h3>
+    <div className=\\"small-spot__btns\\">
+      <div className=\\"small-spot__discount\\">
+        -50%
+      </div>
+      <button className=\\"btn small-spot__btn\\" disabled={true}>
+        IN CART
+      </button>
+    </div>
+  </div>
+</div>"
+`;

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `"<section class=\\"big-spot\\"><h3 class=\\"big-spot__title\\">GAME OF THE WEEK</h3><button class=\\"btn big-spot__btn\\"></button></section>"`;

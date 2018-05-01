@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { PropTypes } from "prop-types";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./small-spots.css";
@@ -12,6 +13,15 @@ function isInCart(game, { products }) {
 }
 
 class SmallSpots extends Component {
+  static propTypes = {
+    cart: PropTypes.shape({
+      products: PropTypes.shape({
+        title: PropTypes.string.isRequired
+      })
+    }),
+    addToCart: PropTypes.func.isRequired
+  };
+
   render() {
     return (
       <section className="small-spots">

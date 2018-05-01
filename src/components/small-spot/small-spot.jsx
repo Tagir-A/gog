@@ -1,8 +1,19 @@
 import React, { Component } from "react";
+import { PropTypes } from "prop-types";
 import "./small-spot.css";
 import { formatPrice } from "../../utils/formatters";
 
 class SmallSpot extends Component {
+  static propTypes = {
+    game: PropTypes.shape({
+      img: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      discount: PropTypes.number.isRequired,
+      owned: PropTypes.bool
+    }).isRequired,
+    isInCart: PropTypes.bool.isRequired
+  };
+
   render() {
     const { game, isInCart } = this.props;
     return (
