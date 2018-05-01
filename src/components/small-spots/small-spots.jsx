@@ -15,9 +15,11 @@ function isInCart(game, { products }) {
 class SmallSpots extends Component {
   static propTypes = {
     cart: PropTypes.shape({
-      products: PropTypes.shape({
-        title: PropTypes.string.isRequired
-      })
+      products: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired
+        })
+      )
     }),
     addToCart: PropTypes.func.isRequired
   };

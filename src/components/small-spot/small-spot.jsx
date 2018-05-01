@@ -8,10 +8,10 @@ class SmallSpot extends Component {
     game: PropTypes.shape({
       img: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      discount: PropTypes.number.isRequired,
+      discount: PropTypes.number,
       owned: PropTypes.bool
     }).isRequired,
-    isInCart: PropTypes.bool.isRequired
+    isInCart: PropTypes.bool
   };
 
   render() {
