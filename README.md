@@ -51,6 +51,7 @@ npm start
 _The browser will open automatically, then you should wait for the initial compile._
 
 **Tests**
+
 You have to have server up and running on `localhost:3000`, so
 
 ```javascript
