@@ -40,7 +40,7 @@ describe("Top bar with Cart icon", () => {
       btnCartValue = await (await btnCart.getProperty("innerText")).jsonValue();
       expect(btnCartValue).toEqual("1");
     },
-    16000
+    1000
   );
 });
 
@@ -51,7 +51,7 @@ describe("Cart dropdown", () => {
       const cart = await page.$(".cart");
       expect(cart).toBeNull();
     },
-    16000
+    1000
   );
   test(
     "'CLEAR CART' button removes all Products from Cart",
@@ -70,7 +70,7 @@ describe("Cart dropdown", () => {
       btnCartValue = await (await btnCart.getProperty("innerText")).jsonValue();
       expect(btnCartValue).toEqual("0");
     },
-    16000
+    1000
   );
   test(
     "'Remove' button removes the product from Cart",
@@ -90,7 +90,7 @@ describe("Cart dropdown", () => {
       btnCartValue = await (await btnCart.getProperty("innerText")).jsonValue();
       expect(btnCartValue).toEqual("3");
     },
-    16000
+    1000
   );
   test(
     "Hovering over Product reveals 'Remove' option",
@@ -118,6 +118,51 @@ describe("Cart dropdown", () => {
         expect(e).toBeFalsy();
       }
     },
-    16000
+    1000
+  );
+});
+
+describe("Content with Products that you can add to Cart", () => {
+  test(
+    "Clicking on price button adds Product to Cart",
+    async () => {
+      const btnCart = await page.waitForSelector(".btn--cart");
+      let btnCartValue = await (await btnCart.getProperty(
+        "innerText"
+      )).jsonValue();
+      expect(btnCartValue).toEqual("0");
+      await page.click(".small-spot__btn");
+      btnCartValue = await (await btnCart.getProperty("innerText")).jsonValue();
+      expect(btnCartValue).toEqual("1");
+    },
+    1000
+  );
+  test(
+    "Products in Cart should be marked as 'IN CART'",
+    async () => {
+      const btn = await page.$(".small-spot__btn");
+      await btn.click();
+      let btnText = await (await btn.getProperty("innerText")).jsonValue();
+      expect(btnText).toEqual("IN CART");
+    },
+    1000
+  );
+  test(
+    "You can’t add the same product to cart twice",
+    async () => {
+      const btnCart = await page.waitForSelector(".btn--cart");
+      let btnCartValue = await (await btnCart.getProperty(
+        "innerText"
+      )).jsonValue();
+      expect(btnCartValue).toEqual("0");
+      const btnAdd = await page.$(".small-spot__btn");
+      await btnAdd.click();
+      btnCartValue = await (await btnCart.getProperty("innerText")).jsonValue();
+      expect(btnCartValue).toEqual("1");
+      await btnAdd.click();
+      btnCartValue = await (await btnCart.getProperty("innerText")).jsonValue();
+      expect(btnCartValue).toEqual("1");
+    },
+    1000
   );
 });
