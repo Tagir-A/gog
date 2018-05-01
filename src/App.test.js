@@ -73,6 +73,26 @@ describe("Cart dropdown", () => {
     16000
   );
   test(
+    "'Remove' button removes the product from Cart",
+    async () => {
+      const btns = await page.$$(".small-spot__btn");
+      for (let i in btns) {
+        await btns[i].click();
+      }
+      const btnCart = await page.waitForSelector(".btn--cart");
+      await btnCart.click();
+      let btnCartValue = await (await btnCart.getProperty(
+        "innerText"
+      )).jsonValue();
+      expect(btnCartValue).toEqual("4");
+      await page.hover(".cart__product");
+      await page.click(".product__info__btn");
+      btnCartValue = await (await btnCart.getProperty("innerText")).jsonValue();
+      expect(btnCartValue).toEqual("3");
+    },
+    16000
+  );
+  test(
     "Hovering over Product reveals 'Remove' option",
     async () => {
       await page.click(".small-spot__btn");
