@@ -52,7 +52,16 @@ _The browser will open automatically, then you should wait for the initial compi
 
 **Tests**
 
-You have to have server up and running on `localhost:3000`, so
+One command test run
+
+```javascript
+npm test
+```
+
+It will bring up localhost server and the tests will run.
+
+If you want to go into manual control then
+You have to start the server up and running on `localhost:3000`, so
 
 ```javascript
 npm start
@@ -61,7 +70,7 @@ npm start
 and then
 
 ```javascript
-npm test
+npm run configured-test
 ```
 
 > Written with [StackEdit](https://stackedit.io/).
