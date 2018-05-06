@@ -1,7 +1,4 @@
-import React from "react";
-import { shallow } from "enzyme";
 import { BigSpot } from "./big-spot";
-import { wrap } from "module";
 
 it("renders without crashing", () => {
   const wrapper = shallow(<BigSpot />);
