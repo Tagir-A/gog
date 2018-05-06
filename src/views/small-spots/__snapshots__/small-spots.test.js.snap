@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`small-spots renders as expected 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SmallSpots
+    addToCart={[Function]}
+    games={
+        Array [
+            Object {
+              "discount": 50,
+              "img": "oddworld.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 999,
+              },
+              "title": "ODDWORLD: STRANGER'S WRATH",
+            },
+            Object {
+              "img": "deponia.png",
+              "owned": true,
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 999,
+              },
+              "title": "CHAOS ON DEPONIA",
+            },
+            Object {
+              "img": "the-settlers-2.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 599,
+              },
+              "title": "THE SETTLERS 2: GOLD EDITION",
+            },
+            Object {
+              "discount": 50,
+              "img": "neverwinter-nights.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 499,
+              },
+              "title": "NEVERWINTER NIGHTS",
+            },
+            Object {
+              "img": "assasins-creed.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 999,
+              },
+              "title": "ASSASIN'S CREED: DIRECTOR'S CUT",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <SmallSpot
+          game={
+                    Object {
+                              "discount": 50,
+                              "img": "oddworld.png",
+                              "price": Object {
+                                "currency": "USD",
+                                "minorUnits": 100,
+                                "value": 999,
+                              },
+                              "title": "ODDWORLD: STRANGER'S WRATH",
+                            }
+          }
+          onAddClick={[Function]}
+/>,
+        <SmallSpot
+          game={
+                    Object {
+                              "img": "deponia.png",
+                              "owned": true,
+                              "price": Object {
+                                "currency": "USD",
+                                "minorUnits": 100,
+                                "value": 999,
+                              },
+                              "title": "CHAOS ON DEPONIA",
+                            }
+          }
+          onAddClick={[Function]}
+/>,
+        <SmallSpot
+          game={
+                    Object {
+                              "img": "the-settlers-2.png",
+                              "price": Object {
+                                "currency": "USD",
+                                "minorUnits": 100,
+                                "value": 599,
+                              },
+                              "title": "THE SETTLERS 2: GOLD EDITION",
+                            }
+          }
+          onAddClick={[Function]}
+/>,
+        <SmallSpot
+          game={
+                    Object {
+                              "discount": 50,
+                              "img": "neverwinter-nights.png",
+                              "price": Object {
+                                "currency": "USD",
+                                "minorUnits": 100,
+                                "value": 499,
+                              },
+                              "title": "NEVERWINTER NIGHTS",
+                            }
+          }
+          onAddClick={[Function]}
+/>,
+        <SmallSpot
+          game={
+                    Object {
+                              "img": "assasins-creed.png",
+                              "price": Object {
+                                "currency": "USD",
+                                "minorUnits": 100,
+                                "value": 999,
+                              },
+                              "title": "ASSASIN'S CREED: DIRECTOR'S CUT",
+                            }
+          }
+          onAddClick={[Function]}
+/>,
+      ],
+      "className": "small-spots",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "ODDWORLD: STRANGER'S WRATH",
+        "nodeType": "class",
+        "props": Object {
+          "game": Object {
+            "discount": 50,
+            "img": "oddworld.png",
+            "price": Object {
+              "currency": "USD",
+              "minorUnits": 100,
+              "value": 999,
+            },
+            "title": "ODDWORLD: STRANGER'S WRATH",
+          },
+          "onAddClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "CHAOS ON DEPONIA",
+        "nodeType": "class",
+        "props": Object {
+          "game": Object {
+            "img": "deponia.png",
+            "owned": true,
+            "price": Object {
+              "currency": "USD",
+              "minorUnits": 100,
+              "value": 999,
+            },
+            "title": "CHAOS ON DEPONIA",
+          },
+          "onAddClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "THE SETTLERS 2: GOLD EDITION",
+        "nodeType": "class",
+        "props": Object {
+          "game": Object {
+            "img": "the-settlers-2.png",
+            "price": Object {
+              "currency": "USD",
+              "minorUnits": 100,
+              "value": 599,
+            },
+            "title": "THE SETTLERS 2: GOLD EDITION",
+          },
+          "onAddClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "NEVERWINTER NIGHTS",
+        "nodeType": "class",
+        "props": Object {
+          "game": Object {
+            "discount": 50,
+            "img": "neverwinter-nights.png",
+            "price": Object {
+              "currency": "USD",
+              "minorUnits": 100,
+              "value": 499,
+            },
+            "title": "NEVERWINTER NIGHTS",
+          },
+          "onAddClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "ASSASIN'S CREED: DIRECTOR'S CUT",
+        "nodeType": "class",
+        "props": Object {
+          "game": Object {
+            "img": "assasins-creed.png",
+            "price": Object {
+              "currency": "USD",
+              "minorUnits": 100,
+              "value": 999,
+            },
+            "title": "ASSASIN'S CREED: DIRECTOR'S CUT",
+          },
+          "onAddClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <SmallSpot
+            game={
+                        Object {
+                                    "discount": 50,
+                                    "img": "oddworld.png",
+                                    "price": Object {
+                                      "currency": "USD",
+                                      "minorUnits": 100,
+                                      "value": 999,
+                                    },
+                                    "title": "ODDWORLD: STRANGER'S WRATH",
+                                  }
+            }
+            onAddClick={[Function]}
+/>,
+          <SmallSpot
+            game={
+                        Object {
+                                    "img": "deponia.png",
+                                    "owned": true,
+                                    "price": Object {
+                                      "currency": "USD",
+                                      "minorUnits": 100,
+                                      "value": 999,
+                                    },
+                                    "title": "CHAOS ON DEPONIA",
+                                  }
+            }
+            onAddClick={[Function]}
+/>,
+          <SmallSpot
+            game={
+                        Object {
+                                    "img": "the-settlers-2.png",
+                                    "price": Object {
+                                      "currency": "USD",
+                                      "minorUnits": 100,
+                                      "value": 599,
+                                    },
+                                    "title": "THE SETTLERS 2: GOLD EDITION",
+                                  }
+            }
+            onAddClick={[Function]}
+/>,
+          <SmallSpot
+            game={
+                        Object {
+                                    "discount": 50,
+                                    "img": "neverwinter-nights.png",
+                                    "price": Object {
+                                      "currency": "USD",
+                                      "minorUnits": 100,
+                                      "value": 499,
+                                    },
+                                    "title": "NEVERWINTER NIGHTS",
+                                  }
+            }
+            onAddClick={[Function]}
+/>,
+          <SmallSpot
+            game={
+                        Object {
+                                    "img": "assasins-creed.png",
+                                    "price": Object {
+                                      "currency": "USD",
+                                      "minorUnits": 100,
+                                      "value": 999,
+                                    },
+                                    "title": "ASSASIN'S CREED: DIRECTOR'S CUT",
+                                  }
+            }
+            onAddClick={[Function]}
+/>,
+        ],
+        "className": "small-spots",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "ODDWORLD: STRANGER'S WRATH",
+          "nodeType": "class",
+          "props": Object {
+            "game": Object {
+              "discount": 50,
+              "img": "oddworld.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 999,
+              },
+              "title": "ODDWORLD: STRANGER'S WRATH",
+            },
+            "onAddClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "CHAOS ON DEPONIA",
+          "nodeType": "class",
+          "props": Object {
+            "game": Object {
+              "img": "deponia.png",
+              "owned": true,
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 999,
+              },
+              "title": "CHAOS ON DEPONIA",
+            },
+            "onAddClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "THE SETTLERS 2: GOLD EDITION",
+          "nodeType": "class",
+          "props": Object {
+            "game": Object {
+              "img": "the-settlers-2.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 599,
+              },
+              "title": "THE SETTLERS 2: GOLD EDITION",
+            },
+            "onAddClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "NEVERWINTER NIGHTS",
+          "nodeType": "class",
+          "props": Object {
+            "game": Object {
+              "discount": 50,
+              "img": "neverwinter-nights.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 499,
+              },
+              "title": "NEVERWINTER NIGHTS",
+            },
+            "onAddClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "ASSASIN'S CREED: DIRECTOR'S CUT",
+          "nodeType": "class",
+          "props": Object {
+            "game": Object {
+              "img": "assasins-creed.png",
+              "price": Object {
+                "currency": "USD",
+                "minorUnits": 100,
+                "value": 999,
+              },
+              "title": "ASSASIN'S CREED: DIRECTOR'S CUT",
+            },
+            "onAddClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

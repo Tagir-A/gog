@@ -1,10 +1,7 @@
-import {
-    SMALL_SPOTS
-} from "../../../data/small-spots";
+import { GAMES } from "../../../data/games";
 
-const defaultState = [...SMALL_SPOTS]
-
+const defaultState = [...GAMES];
 
 export default function games(state = defaultState, action = {}) {
-    return state;
+  return state;
 }

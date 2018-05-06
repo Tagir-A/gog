@@ -49,8 +49,8 @@ exports[`renders without crashing 1`] = `
       <div className=\\"small-spot__discount\\">
         -50%
       </div>
-      <button className=\\"btn small-spot__btn\\" disabled={true}>
-        IN CART
+      <button className=\\"btn small-spot__btn\\" onClick={[Function]}>
+        $9.99
       </button>
     </div>
   </div>
