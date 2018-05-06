@@ -36,6 +36,10 @@ I decided to go with react, because I didn't want to be obstructed by the previo
 I used [re-ducks](https://github.com/alexnm/re-ducks) pattern for architecture, as it provides scalability.
 Due to this being an example project, some parts might be redundant or overcomplicated. However, in the long run such approach will save tons of effort and nerves.
 
+## Demo
+
+Here is the online [demo](https://tagir-a.github.io/gog/)
+
 ## Build
 
 **Prepare**
