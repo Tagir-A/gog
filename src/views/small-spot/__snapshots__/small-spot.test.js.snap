@@ -11,7 +11,7 @@ exports[`renders add button when game not owned and not in a cart 1`] = `
       <div className=\\"small-spot__discount\\">
         -50%
       </div>
-      <button className=\\"btn small-spot__btn\\" onClick={[Function]}>
+      <button className=\\"btn small-spot__btn\\" onClick={[Function: handleAddToCart]}>
         $9.99
       </button>
     </div>
@@ -49,7 +49,7 @@ exports[`renders without crashing 1`] = `
       <div className=\\"small-spot__discount\\">
         -50%
       </div>
-      <button className=\\"btn small-spot__btn\\" onClick={[Function]}>
+      <button className=\\"btn small-spot__btn\\" onClick={[Function: handleAddToCart]}>
         $9.99
       </button>
     </div>

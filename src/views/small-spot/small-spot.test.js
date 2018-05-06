@@ -2,7 +2,8 @@ import { SmallSpot } from "./small-spot";
 import { GAMES } from "../../data/games";
 
 const props = {
-  game: GAMES[0]
+  game: GAMES[0],
+  onAddClick: () => null
 };
 
 it("renders without crashing", () => {
@@ -11,13 +12,14 @@ it("renders without crashing", () => {
 });
 
 it("renders owned button when game is owned", () => {
-  const props = {
+  const innerProps = {
+    ...props,
     game: {
       ...GAMES[0],
       owned: true
     }
   };
-  const wrapper = shallow(<SmallSpot {...props} />);
+  const wrapper = shallow(<SmallSpot {...innerProps} />);
   expect(wrapper.debug()).toMatchSnapshot();
   expect(wrapper.find(".small-spot__btn--disabled").text()).toEqual("OWNED");
 });

@@ -1,46 +1,25 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./small-spot.css";
 import { formatPrice } from "../../utils/formatters";
 import game from "../../models/game";
 
-class SmallSpot extends Component {
-  static propTypes = {
-    game: game.isRequired
+function SmallSpot({ game, onAddClick }) {
+  const handleAddToCart = () => {
+    onAddClick && onAddClick(game);
   };
-
-  render() {
-    const { game } = this.props;
-    return (
-      <div className="small-spot">
-        <img src={game.img} alt={game.title} className="small-spot__image" />
-        <div className="small-spot__info">
-          <h3 className="small-spot__info__title">{game.title}</h3>
-          <div className="small-spot__btns">
-            {game.discount && (
-              <div className="small-spot__discount">{`-${game.discount}%`}</div>
-            )}
-            {game.owned
-              ? this.renderOwnedBtn()
-              : game.isInCart
-                ? this.renderInCartBtn()
-                : this.renderAddBtn(game)}
-          </div>
-        </div>
-      </div>
-    );
-  }
-  renderAddBtn(game) {
+  function renderAddBtn(game) {
     const {
       price: { value, minorUnits }
     } = game;
     const priceToShow = value / minorUnits;
     return (
-      <button className="btn small-spot__btn" onClick={this.handleAddToCart}>
+      <button className="btn small-spot__btn" onClick={handleAddToCart}>
         {formatPrice(priceToShow)}
       </button>
     );
   }
-  renderOwnedBtn() {
+  function renderOwnedBtn() {
     return (
       <button
         className="btn small-spot__btn small-spot__btn--disabled"
@@ -50,7 +29,7 @@ class SmallSpot extends Component {
     );
   }
 
-  renderInCartBtn() {
+  function renderInCartBtn() {
     return (
       <button className="btn small-spot__btn" disabled>
         IN CART
@@ -58,10 +37,29 @@ class SmallSpot extends Component {
     );
   }
 
-  handleAddToCart = () => {
-    const { onAddClick, game } = this.props;
-    onAddClick && onAddClick(game);
-  };
+  return (
+    <div className="small-spot">
+      <img src={game.img} alt={game.title} className="small-spot__image" />
+      <div className="small-spot__info">
+        <h3 className="small-spot__info__title">{game.title}</h3>
+        <div className="small-spot__btns">
+          {game.discount && (
+            <div className="small-spot__discount">{`-${game.discount}%`}</div>
+          )}
+          {game.owned
+            ? renderOwnedBtn()
+            : game.isInCart
+              ? renderInCartBtn()
+              : renderAddBtn(game)}
+        </div>
+      </div>
+    </div>
+  );
 }
+
+SmallSpot.propTypes = {
+  game: game.isRequired,
+  onAddClick: PropTypes.func.isRequired
+};
 
 export { SmallSpot };
