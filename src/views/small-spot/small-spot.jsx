@@ -1,21 +1,15 @@
 import React, { Component } from "react";
-import { PropTypes } from "prop-types";
 import "./small-spot.css";
 import { formatPrice } from "../../utils/formatters";
+import game from "../../models/game";
 
 class SmallSpot extends Component {
   static propTypes = {
-    game: PropTypes.shape({
-      img: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      discount: PropTypes.number,
-      owned: PropTypes.bool
-    }).isRequired,
-    isInCart: PropTypes.bool
+    game: game.isRequired
   };
 
   render() {
-    const { game, isInCart } = this.props;
+    const { game } = this.props;
     return (
       <div className="small-spot">
         <img src={game.img} alt={game.title} className="small-spot__image" />
@@ -27,7 +21,7 @@ class SmallSpot extends Component {
             )}
             {game.owned
               ? this.renderOwnedBtn()
-              : isInCart
+              : game.isInCart
                 ? this.renderInCartBtn()
                 : this.renderAddBtn(game)}
           </div>
@@ -50,8 +44,7 @@ class SmallSpot extends Component {
     return (
       <button
         className="btn small-spot__btn small-spot__btn--disabled"
-        disabled
-      >
+        disabled>
         OWNED
       </button>
     );

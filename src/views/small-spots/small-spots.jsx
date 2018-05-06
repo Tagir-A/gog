@@ -7,11 +7,7 @@ import game from "../../models/game";
 class SmallSpots extends Component {
   static propTypes = {
     cart: PropTypes.shape({
-      products: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired
-        })
-      )
+      products: PropTypes.arrayOf(game)
     }),
     games: PropTypes.arrayOf(game),
     addToCart: PropTypes.func.isRequired
@@ -25,7 +21,6 @@ class SmallSpots extends Component {
           <SmallSpot
             key={game.title}
             game={game}
-            isInCart={true}
             onAddClick={this.props.addToCart}
           />
         ))}

@@ -33,6 +33,8 @@ If there is something missing or unclear in the description above, we ask you to
 
 Since it was possible to use **any** tools available, this task was build with [create-react-app](https://github.com/facebook/create-react-app).
 I decided to go with react, because I didn't want to be obstructed by the previously unknown API's. Since it is only a recruitment task, and I suppose the point is to check the overall structure and maintainability.
+I used [re-ducks](https://github.com/alexnm/re-ducks) pattern for architecture, as it provides scalability.
+Due to this being an example project, some parts might be redundant or overcomplicated. However, in the long run such approach will save tons of effort and nerves.
 
 ## Build
 

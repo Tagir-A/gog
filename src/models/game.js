@@ -11,5 +11,6 @@ export default shape({
     title: string.isRequired,
     img: string.isRequired,
     discount: number,
-    price: price.isRequired
+    price: price.isRequired,
+    isInCart: PropTypes.bool
 });
