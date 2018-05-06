@@ -4,8 +4,7 @@ import theSettlers2 from '../assets/small-spots/the-settlers-2.png'
 import neverwinterNights from '../assets/small-spots/neverwinter-nights.png'
 import assasinsCreed from '../assets/small-spots/assasins-creed.png'
 
-export const smallSpots = [
-    {
+const SMALL_SPOTS = [{
         title: "ODDWORLD: STRANGER'S WRATH",
         img: oddworld,
         price: {
@@ -54,3 +53,7 @@ export const smallSpots = [
         }
     }
 ]
+
+export {
+    SMALL_SPOTS
+}

@@ -14,7 +14,9 @@ const height = 1080;
 const APP = "http://localhost:3000/";
 
 beforeAll(async () => {
-  browser = await puppeteer.launch();
+  browser = await puppeteer.launch({
+    headless: false
+  });
   page = await browser.newPage();
   await page.goto(APP);
 });

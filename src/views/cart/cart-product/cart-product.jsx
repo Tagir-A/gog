@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./cart-product.css";
+import game from "../../../models/game";
 
 class CartProduct extends Component {
+  static propTypes = {
+    product: game.isRequired,
+    onRemoveClick: PropTypes.func.isRequired
+  };
   render() {
     const { product } = this.props;
     return (
@@ -25,7 +31,7 @@ class CartProduct extends Component {
 
   handleRemoveClick = () => {
     const { onRemoveClick, product } = this.props;
-    onRemoveClick && onRemoveClick(product);
+    onRemoveClick(product);
   };
 }
 

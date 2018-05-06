@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./menu.css";
 import logo from "../../assets/logo-classic.svg";
-import Cart from "../cart/cart";
+import Cart from "../../containers/cart/cart";
 
 class Menu extends Component {
   render() {
@@ -18,4 +18,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export { Menu };

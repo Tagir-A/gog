@@ -1,13 +1,20 @@
 import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import pluralize from "pluralize";
-import { bindActionCreators } from "redux";
 import "./cart.css";
-import { toggleCart, clearCart, removeFromCart } from "../../actions/cart";
 import { formatPrice } from "../../utils/formatters";
 import { CartProduct } from "./cart-product/cart-product";
+import game from "../../models/game";
 
 class Cart extends Component {
+  static propTypes = {
+    products: PropTypes.arrayOf(game).isRequired,
+    isOpen: PropTypes.bool,
+    toggleCart: PropTypes.func.isRequired,
+    clearCart: PropTypes.func.isRequired,
+    removeFromCart: PropTypes.func.isRequired
+  };
+
   render() {
     const { products, isOpen } = this.props;
     return (
@@ -65,22 +72,4 @@ class Cart extends Component {
   };
 }
 
-function mapState({ cart: { products, isOpen } }) {
-  return {
-    products,
-    isOpen
-  };
-}
-
-function mapDispatch(dispatch) {
-  return bindActionCreators(
-    {
-      toggleCart,
-      clearCart,
-      removeFromCart
-    },
-    dispatch
-  );
-}
-
-export default connect(mapState, mapDispatch)(Cart);
+export { Cart };

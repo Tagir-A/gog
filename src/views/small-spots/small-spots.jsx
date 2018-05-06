@@ -1,16 +1,8 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import "./small-spots.css";
-
-import { smallSpots } from "../../data/small-spots";
 import { SmallSpot } from "../small-spot/small-spot";
-import { addToCart } from "../../actions/cart";
-
-function isInCart(game, { products }) {
-  return products.find(product => product.title === game.title);
-}
+import "./small-spots.css";
+import game from "../../models/game";
 
 class SmallSpots extends Component {
   static propTypes = {
@@ -21,17 +13,19 @@ class SmallSpots extends Component {
         })
       )
     }),
+    games: PropTypes.arrayOf(game),
     addToCart: PropTypes.func.isRequired
   };
 
   render() {
+    const { games } = this.props;
     return (
       <section className="small-spots">
-        {smallSpots.map(game => (
+        {games.map(game => (
           <SmallSpot
             key={game.title}
             game={game}
-            isInCart={isInCart(game, this.props.cart)}
+            isInCart={true}
             onAddClick={this.props.addToCart}
           />
         ))}
@@ -40,19 +34,4 @@ class SmallSpots extends Component {
   }
 }
 
-function mapState({ cart }) {
-  return {
-    cart
-  };
-}
-
-function mapDispatch(dispatch) {
-  return bindActionCreators(
-    {
-      addToCart
-    },
-    dispatch
-  );
-}
-
-export default connect(mapState, mapDispatch)(SmallSpots);
+export { SmallSpots };
